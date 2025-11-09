@@ -1,4 +1,4 @@
-@extends('Dashboard.home')
+@extends('backend.app')
 @section('content')
   <!--app-content open-->
                 <div class="app-content main-content mt-0">

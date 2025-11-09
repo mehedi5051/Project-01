@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     function dashboard(){
-        return view('Dashboard.main-content');
+        return view('backend.layouts.dashboard');
     }
 
     function blog(){
-        return view('Dashboard.blog');
+        return view('backend.layouts.blog');
     }
 }

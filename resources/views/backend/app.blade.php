@@ -7,7 +7,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-@include('Dashboard.header')
+@include('backend.partials.header')
 
 </head>
 
@@ -2083,7 +2083,7 @@
 
     </div>
     <!-- page -->
-@include('Dashboard.footer')
+@include('backend.partials.footer')
 
 </body>
 
