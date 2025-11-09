@@ -6,3 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DashboardController::class, 'dashboard']);
+Route::get('/blog', [DashboardController::class, 'blog']);
