@@ -11,7 +11,10 @@
                         <!-- PAGE-HEADER -->
                         <div class="page-header">
                             <div>
-                                <h1 class="page-title">{{ $user->name ? "Welcome ".$user->name : "Dashboard" }}</h1>
+                                <h1 class="page-title"> {{ $user->name ? $user->name : " user" }}</h1>
+
+                                {{-- {{ $user?->name ? "Welcome ".$user->name : "Dashboard" }} --}}
+
                             </div>
                             <div class="ms-auto pageheader-btn">
                                 <ol class="breadcrumb">

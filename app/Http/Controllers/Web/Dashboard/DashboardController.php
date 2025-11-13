@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     function dashboard(){
-       $user = User::first();
+       $user= User::first();
+    // $user = Auth::first();
         return view('backend.layouts.dashboard', compact('user'));
     }
 
