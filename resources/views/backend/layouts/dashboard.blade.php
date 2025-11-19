@@ -11,7 +11,7 @@
                         <!-- PAGE-HEADER -->
                         <div class="page-header">
                             <div>
-                                <h1 class="page-title"> {{ $user->name ? $user->name : " user" }}</h1>
+                                <h1 class="page-title"> {{ $user?->name ?  "welcome". $user?->name : " user" }}</h1>
 
                                 {{-- {{ $user?->name ? "Welcome ".$user->name : "Dashboard" }} --}}
 

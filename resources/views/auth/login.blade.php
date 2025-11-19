@@ -143,14 +143,16 @@
 				<div>
 				    <!-- CONTAINER OPEN -->
 					<div class="col col-login mx-auto text-center">
-						<a href="index.html" class="text-center">
+						<a href="{{ route('home') }}" class="text-center">
 							<img src="assets/images/brand/logo.png" class="header-brand-img" alt="">
 						</a>
 					</div>
 					<div class="container-login100">
 						<div class="wrap-login100 p-0">
 							<div class="card-body">
-								<form class="login100-form validate-form">
+								<form method="POST" action="{{ route('login') }} " class= "login100-form validate-form">
+                                    @csrf
+                                    
 									<span class="login100-form-title">
 										Login
 									</span>
@@ -160,24 +162,59 @@
 										<span class="symbol-input100">
 											<i class="zmdi zmdi-email" aria-hidden="true"></i>
 										</span>
+
+
+                                      
+                                        {{-- @foreach (($errors->get('email')) as  $messages)
+                                        {{ $messages }}
+                                              <span style="color: red;">
+                                            please enter valid email
+                                            
+                                        </span>
+                                        @endforeach --}}
+
+                                        @error('email')
+                                        <span style="color: red; font-size:14px;">{{ $message }}</span>
+                                        @enderror
+
+
 									</div>
 									<div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
-										<input class="input100" type="password" name="pass" placeholder="Password">
+										<input class="input100" type="password" name="password" placeholder="Password">
 										<span class="focus-input100"></span>
 										<span class="symbol-input100">
 											<i class="zmdi zmdi-lock" aria-hidden="true"></i>
-										</span>
+                                        </span>
+
+
+                                             {{-- @foreach (($errors->get('password')) as  $messages)
+                                        {{ $messages }}
+                                              <span style="color: red;">
+                                            please enter valid password
+                                        </span>
+                                        @endforeach --}}
+
+                                        @error('password')
+                                        <span style="color: red; font-size:14px;">{{ $message }}</span>
+                                        @enderror
+
+
+
 									</div>
 									<div class="text-end pt-1">
-										<p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">Forgot Password?</a></p>
+										<p class="mb-0"><a href="{{ route('password.request') }}" class="text-primary ms-1">Forgot Password?</a></p>
 									</div>
 									<div class="container-login100-form-btn">
-										<a href="index.html" class="login100-form-btn btn-primary">
+
+										{{-- <a href="index.html" class="login100-form-btn btn-primary">
 											Login
-										</a>
+										</a>--}}
+
+                                        <button class="login100-form-btn btn-primary" type = "submit">Login</button>
+
 									</div>
 									<div class="text-center pt-3">
-										<p class="text-dark mb-0">Not a member?<a href="register.html" class="text-primary ms-1">Create an Account</a></p>
+										<p class="text-dark mb-0">Not a member?<a href="{{ route('register') }}" class="text-primary ms-1">Create an Account</a></p>
 									</div>
 								</form>
 							</div>
@@ -228,7 +265,7 @@
 
     </body>
 
-@include('backend.partials.footergit');
+@include('backend.partials.footer');
 
 
 <!-- Mirrored from laravel8.spruko.com/noa/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:11:49 GMT -->
